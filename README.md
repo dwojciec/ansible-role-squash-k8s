@@ -14,7 +14,14 @@ $ docker build -t squash-ansible-operator -t Dockerfile .
 ```
 
 Then push the image build to your repository 
-
+```
+# docker login quay.io
+Username: dwojciec
+Password:
+Login Succeeded
+# docker tag squash-ansible-operator:latest quay.io/dwojciec/squash-ansible-operator:latest
+# docker push quay.io/dwojciec/squash-ansible-operator
+```
 
 Then, we create the important objects our operator needs to run:
 
