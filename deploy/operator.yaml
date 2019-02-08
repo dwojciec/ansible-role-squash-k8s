@@ -15,7 +15,8 @@ spec:
       serviceAccountName: squash-operator
       containers:
         - name: squash-operator
-          image: quay.io/dwojciec/squash-operator:v0.0.2
+          # Replace this with the built image name
+          image: REPLACE_IMAGE
           imagePullPolicy: Always
           env:
             - name: WATCH_NAMESPACE
