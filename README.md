@@ -26,9 +26,14 @@ Login Succeeded
 Then, we create the important objects our operator needs to run:
 
 ```
-$ kubectl create -f deploy/sa.yaml \
-                 -f deploy/rbac.yaml \
-                 -f deploy/crds/crd.yaml \
+# oc new-project squash-server
+# kubectl create -f deploy/sa.yaml \
+                  -f deploy/rbac.yaml \
+                  -f deploy/crds/crd.yaml
+serviceaccount/squash-operator created
+clusterrole.rbac.authorization.k8s.io/squash-operator created
+clusterrolebinding.rbac.authorization.k8s.io/squash-operator created
+customresourcedefinition.apiextensions.k8s.io/squashes.app.dwojciec.com created
 ```
 
 Then, we start the operator:
@@ -40,8 +45,14 @@ Then, we start the operator:
 $ sed 's|REPLACE_IMAGE|squash-ansible-operator|g; s|Always|Never|' deploy/operator.yaml | kubectl create -f -
 ```
 
+```
+# sed 's|REPLACE_IMAGE|quay.io/dwojciec/squash-ansible-operator:latest|g' deploy/operator.yaml | kubectl create -f -
+deployment.apps/squash-operator created
+```
+
 Finally, create a Squash resource:
 
 ```
-$ kubectl create -f deploy/crds/cr.yaml
+# kubectl create -f deploy/crds/cr.yaml
+squash.app.dwojciec.com/squashtest created
 ```
