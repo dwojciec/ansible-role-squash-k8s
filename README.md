@@ -28,11 +28,12 @@ Then, we create the important objects our operator needs to run:
 ```
 # oc new-project squash-server
 # kubectl create -f deploy/sa.yaml \
-                  -f deploy/rbac.yaml \
+                  -f deploy/role.yaml \
+                  -f deploy/role_binding.yaml \
                   -f deploy/crds/crd.yaml
 serviceaccount/squash-operator created
-clusterrole.rbac.authorization.k8s.io/squash-operator created
-clusterrolebinding.rbac.authorization.k8s.io/squash-operator created
+role.rbac.authorization.k8s.io/squash-operator created
+rolebinding.rbac.authorization.k8s.io/squash-operator created
 customresourcedefinition.apiextensions.k8s.io/squashes.app.dwojciec.com created
 ```
 

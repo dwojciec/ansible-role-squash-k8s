@@ -32,7 +32,7 @@ rules:
   - get
   - create
 - apiGroups:
-  - examples.dwojciec.com
+  - app.dwojciec.com
   resources:
   - '*'
   verbs:
