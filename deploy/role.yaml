@@ -1,14 +1,8 @@
-kind: ClusterRole
+kind: Role
 apiVersion: rbac.authorization.k8s.io/v1beta1
 metadata:
   name: squash-operator
 rules:
-- apiGroups:
-  - app.dwojciec.com
-  resources:
-  - "*"
-  verbs:
-  - "*"
 - apiGroups:
   - ""
   resources:
@@ -20,7 +14,7 @@ rules:
   - configmaps
   - secrets
   verbs:
-  - "*"
+  - '*'
 - apiGroups:
   - apps
   resources:
@@ -29,5 +23,17 @@ rules:
   - replicasets
   - statefulsets
   verbs:
-  - "*"
-
+  - '*'
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - servicemonitors
+  verbs:
+  - get
+  - create
+- apiGroups:
+  - examples.dwojciec.com
+  resources:
+  - '*'
+  verbs:
+  - '*'
