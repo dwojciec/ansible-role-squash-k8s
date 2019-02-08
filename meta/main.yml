@@ -1,0 +1,25 @@
+galaxy_info:
+  role_name: squash-k8s
+  author: Didier Wojciechowski
+  description: Manage Squash Debugger application in Kubernetes|OpenShift
+  company: Red Hat
+  license: Apache 2.0
+  min_ansible_version: 2.6
+
+  platforms:
+    - name: Kubernetes
+      versions:
+        - 1.9
+        - 1.10
+    - name: OpenShift
+      versions:
+        - 3.9
+        - 3.11
+
+  galaxy_tags:
+    - kubernetes
+    - k8s
+    - openshift
+    - squash
+
+dependencies: []
