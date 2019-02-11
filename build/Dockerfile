@@ -1,4 +1,4 @@
-FROM quay.io/water-hole/ansible-operator:latest
+FROM quay.io/operator-framework/ansible-operator
 
 RUN ansible-galaxy install dwojciec.squash_k8s
 
