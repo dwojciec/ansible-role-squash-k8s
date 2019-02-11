@@ -4,7 +4,7 @@
 # deploy/crds has an example CR for reference
 name-server: "{{ meta.name | default('squash-server') }}"
 name-client: "{{ meta.name | default('squash-client') }}"
-namespace: "{{ meta.namespace | default('squash') }}"
+namespace: "{{ meta.namespace | default('squash-server') }}"
 image: quay.io/dwojciec/squash-ansible-operator:latest
 image-client: soloio/squash-client:v0.2.1
 image-server: soloio/squash-server:v0.2.1
