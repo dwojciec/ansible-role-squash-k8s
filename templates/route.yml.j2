@@ -5,16 +5,16 @@ kind: Route
 metadata:
 annotations:
   openshift.io/host.generated: "true"
-  name: {{ name-server }}
+  name: {{ nameserver }}
   namespace: {{ namespace }}
   labels:
-    app: {{ name-server }}
-    service: {{ name-server }}
+    app: {{ nameserver }}
+    service: {{ nameserver }}
 spec:
   port:
     targetPort: http-squash-api
   to:
     kind: Service
-    name: {{ name-server }}
+    name: {{ nameserver }}
     weight: 100
   wildcardPolicy: None 

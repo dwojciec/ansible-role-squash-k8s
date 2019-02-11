@@ -3,11 +3,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ name-server }}
+  name: {{ nameserver }}
   namespace: {{ namespace }}
   labels:
-    app: {{ name-server }}
-    service: {{ name-server }}
+    app: {{ nameserver }}
+    service: {{ nameserver }}
 spec:
   ports:
   - name: http-squash-api
@@ -15,5 +15,5 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: {{ name-server }}
-    service: {{ name-server }}
+    app: {{ nameserver }}
+    service: {{ nameserver }}

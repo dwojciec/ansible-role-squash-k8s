@@ -4,19 +4,19 @@ apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
   labels:
-    app: {{ squash-client }}
-  name: {{ squash-client }}
+    app: {{ nameclient }}
+  name: {{ nameclient }}
   namespace: {{ meta.namespace }}
 spec:
   template:
     metadata:
       labels:
-        app: {{ squash-client }}
+        app: {{ nameclient }}
     spec:
       hostPID: true
       containers:
-      - name: {{ squash-client }}
-        image: {{ image-client }}
+      - name: {{ nameclient }}
+        image: {{ imageclient }}
         volumeMounts:
         - mountPath: /var/run/cri.sock
           name: crisock
