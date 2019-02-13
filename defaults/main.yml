@@ -2,8 +2,8 @@
 
 # NOTE: meta.name(space) come from CR metadata when run with Ansible Operator
 # deploy/crds has an example CR for reference
-nameserver: "squash-server"
-nameclient: "squash-client"
+nameserver: "squashserver"
+nameclient: "squashclient"
 namespace: "{{ meta.namespace | default('squash-server') }}"
 image: quay.io/dwojciec/squash-ansible-operator:latest
 imageclient: docker.io/soloio/squash-client:v0.2.1
