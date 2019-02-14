@@ -6,6 +6,8 @@ Manages a Squash Debugger application in Kubernetes|OpenShift. This project also
 includes the necessary bits for deploying this role with Ansible Operator in a
 Kubernetes|OpenShift cluster.
 
+This project is based on this blog post [Reaching for the Stars with Ansible Operator] {https://blog.openshift.com/reaching-for-the-stars-with-ansible-operator/} and my previous project [Squash Operator]{https://github.com/dwojciec/squash-operator}
+
 Step (A)
 
 ```
@@ -35,6 +37,11 @@ serviceaccount/squash-operator created
 role.rbac.authorization.k8s.io/squash-operator created
 rolebinding.rbac.authorization.k8s.io/squash-operator created
 customresourcedefinition.apiextensions.k8s.io/squashes.app.dwojciec.com created
+
+We need scc privileged to be able to hostPID for squash-client daemonset 
+# oc adm policy add-scc-to-user privileged -n squash-server -z default
+
+# oc adm policy add-role-to-user admin system:serviceaccount:squash-server:squash-operator
 ```
 
 Then, we start the operator:
@@ -56,4 +63,15 @@ Finally, create a Squash resource:
 ```
 # kubectl create -f deploy/crds/cr.yaml
 squash.app.dwojciec.com/squashtest created
+```
+
+
+### Cleanup the squash-operator:
+```
+$ kubectl delete -f deploy/crds/cr.yaml \
+                 -f deploy/operator.yaml \
+                 -f deploy/role.yaml \ 
+                 -f deploy/role_binding.yaml \
+                 -f deploy/sa.yaml \
+                 -f deploy/crd.yaml
 ```
