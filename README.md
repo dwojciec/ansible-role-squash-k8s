@@ -49,11 +49,6 @@ Then, we start the operator:
 
 ```
 # Use the image name from the operator-sdk build step (A)  above
-# and set the imagePullPolicy to Never
-$ sed 's|REPLACE_IMAGE|squash-ansible-operator|g; s|Always|Never|' deploy/operator.yaml | kubectl create -f -
-```
-
-```
 # sed 's|REPLACE_IMAGE|quay.io/dwojciec/squash-ansible-operator:latest|g' deploy/operator.yaml | kubectl create -f -
 deployment.apps/squash-operator created
 ```
