@@ -73,5 +73,5 @@ $ kubectl delete -f deploy/crds/cr.yaml \
                  -f deploy/role.yaml \ 
                  -f deploy/role_binding.yaml \
                  -f deploy/sa.yaml \
-                 -f deploy/crd.yaml
+                 -f deploy/crds/crd.yaml
 ```
