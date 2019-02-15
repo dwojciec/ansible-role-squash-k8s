@@ -44,6 +44,12 @@ We need scc privileged to be able to hostPID for squash-client daemonset
 # oc adm policy add-role-to-user admin system:serviceaccount:squash-server:squash-operator
 ```
 
+We need additionnal privileges to list route on the cluster. We are creating a clusterrole and we are assigning it to the Service Account
+```
+# oc create clusterrole listroute --verb=list --resource=route
+# oc adm policy add-cluster-role-to-user listroute system:serviceaccount:squash-server:squash-operator
+```
+
 Then, we start the operator:
 
 
