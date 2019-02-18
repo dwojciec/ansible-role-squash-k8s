@@ -6,8 +6,8 @@ nameserver: "squashserver"
 nameclient: "squashclient"
 namespace: "{{ meta.namespace | default('squash-server') }}"
 image: quay.io/dwojciec/squash-ansible-operator:latest
-imageclient: docker.io/soloio/squash-client:v0.2.1
-imageserver: docker.io/soloio/squash-server:v0.2.1
+imageclient: docker.io/soloio/squash-client:v0.3.1
+imageserver: docker.io/soloio/squash-server:v0.3.1
 
 # To uninstall from the cluster
 # state: absent
