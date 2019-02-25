@@ -12,7 +12,7 @@ Step (A)
 
 ```
 $ git clone https://github.com/dwojciec/ansible-role-squash-k8s.git
-$ docker build -t squash-ansible-operator -t Dockerfile .
+$ docker build -t squash-ansible-operator -f ./build/Dockerfile .
 ```
 
 Then push the image build to your repository 
