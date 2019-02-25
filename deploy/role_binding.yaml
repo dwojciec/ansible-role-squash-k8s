@@ -5,6 +5,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: squash-operator
+  namespace: squash-server
 roleRef:
   kind: ClusterRole
   name: squash-operator
