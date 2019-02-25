@@ -12,6 +12,7 @@ Step (A)
 
 ```
 $ git clone https://github.com/dwojciec/ansible-role-squash-k8s.git
+$ cd ansible-role-squash-k8s
 $ docker build -t squash-ansible-operator -f ./build/Dockerfile .
 ```
 
