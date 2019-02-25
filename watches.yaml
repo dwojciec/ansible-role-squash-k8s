@@ -1,6 +1,6 @@
 ---
 
 - version: v1alpha1
-  group: app.dwojciec.com
+  group: examples.dwojciec.com
   kind: Squash
   role: /opt/ansible/roles/dwojciec.squash_k8s
