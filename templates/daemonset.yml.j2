@@ -27,7 +27,7 @@ spec:
           protocol: TCP
         env:
         - name: SERVERURL
-          value: "http://$(SQUASHSERVER_SERVICE_HOST):$(SQUASHSERVER_SERVICE_PORT_HTTP_SQUASH_API)"
+          value: "http://$(SQUASH_SERVER_SERVICE_HOST):$(SQUASH_SERVER_SERVICE_PORT_HTTP_SQUASH_API)"
         - name: POD_NAME
           valueFrom:
             fieldRef:
