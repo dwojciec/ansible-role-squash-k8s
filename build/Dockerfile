@@ -2,6 +2,8 @@ FROM quay.io/operator-framework/ansible-operator
 
 RUN ansible-galaxy install dwojciec.squash_k8s
 
+COPY ansible.cfg /etc/ansible/ansible.cfg
+
 RUN echo $'--- \n\
 - version: v1alpha1\n\
   group: examples.dwojciec.com\n\
