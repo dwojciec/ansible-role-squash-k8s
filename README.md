@@ -42,7 +42,7 @@ customresourcedefinition.apiextensions.k8s.io/squashes.app.dwojciec.com created
 We need scc privileged to be able to hostPID for squash-client daemonset 
 # oc adm policy add-scc-to-user privileged -n squash-server -z default
 
-# oc adm policy add-role-to-user cluster-admin system:serviceaccount:squash-server:squash-operator
+# oc adm policy add-cluster-role-to-user cluster-admin system:serviceaccount:squash-server:squash-operator
 ```
 
 We need additionnal privileges to list route on the cluster. We are creating a clusterrole and we are assigning it to the Service Account
